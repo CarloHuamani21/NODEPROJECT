@@ -9,12 +9,28 @@ yarn-error.log
 .env.local
 .env.*.local
 
-# IDE
-.vscode/
+# Build output
+dist/
+build/
+*.bundle.js
+
+# IDE and editor files
 .idea/
+.vscode/
 *.swp
 *.swo
-
-# OS
 .DS_Store
-Thumbs.db 
+
+# Logs
+logs/
+*.log
+
+# Testing
+coverage/
+
+# Temporary files
+tmp/
+temp/
+
+# Docker
+.docker/ 
