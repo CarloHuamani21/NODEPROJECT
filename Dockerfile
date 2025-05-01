@@ -1,5 +1,5 @@
 # Usa una imagen oficial de Node
-FROM node:18
+FROM node:18-alpine
 
 # Establece el directorio de trabajo dentro del contenedor
 WORKDIR /app
@@ -8,7 +8,7 @@ WORKDIR /app
 COPY package*.json ./
 
 # Instala dependencias
-RUN npm install
+RUN npm install --production
 
 # Copia el resto del código
 COPY . .
@@ -16,5 +16,9 @@ COPY . .
 # Expón el puerto de la app
 EXPOSE 3000
 
+# Variables de entorno
+ENV NODE_ENV=production
+ENV PORT=3000
+
 # Comando para iniciar la app
-CMD ["node", "crud-vendedores/app.js"] 
+CMD ["npm", "start"] 
