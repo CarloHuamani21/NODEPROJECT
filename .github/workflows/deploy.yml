@@ -2,13 +2,12 @@ name: Deploy App Node.js con Docker
 
 on:
   push:
-    branches:
-      - main  # Cada vez que subas cambios a "main", se ejecutará esto
+    branches: [ main ]
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
-
+    
     steps:
       - name: Checkout el código
         uses: actions/checkout@v4
